@@ -16,11 +16,11 @@ class CreateBidsTable extends Migration
         Schema::create('bids', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('product_id');
+            $table->integer('product_id')->unsigned();
             $table->string('amount');
-            $table->integer('bidder_id');
-            $table->foreign('bidder_id')->refrences('id')->on('users');
-            $table->foreign('product_id')->refrences('id')->on('products');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

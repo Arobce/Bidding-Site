@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //
-    const CREATED_AT = 'added_time';
-    const UPDATED_AT = 'last_updated';
+
+    protected $fillable = ['name', 'image_url', 'description','category','initial_price','final_price'];
+
 
     public function user(){
         return $this->belongsTo('App\User');

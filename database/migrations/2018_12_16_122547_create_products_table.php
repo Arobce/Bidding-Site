@@ -19,10 +19,11 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('image_url');
             $table->longText('description');
+            $table->string('category');
             $table->string('initial_price');
             $table->string('final_price');
-            $table->integer('adder_id');
-            $table->foreign('adder_id')->refrences('id')->on('users');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

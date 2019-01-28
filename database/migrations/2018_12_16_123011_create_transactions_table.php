@@ -16,13 +16,13 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('product_id');
-            $table->integer('seller_id');
-            $table->integer('buyer_id');
+            $table->integer('product_id')->unsigned();
+            $table->integer('seller_id')->unsigned();
+            $table->integer('buyer_id')->unsigned();
             $table->string('amount');
-            $table->foreign('buyer_id')->refrences('id')->on('users');
-            $table->foreign('seller_id')->refrences('id')->on('users');
-            $table->foreign('product_id')->refrences('id')->on('products');
+            $table->foreign('buyer_id')->references('id')->on('users');
+            $table->foreign('seller_id')->references('id')->on('users');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

@@ -1,0 +1,60 @@
+//Upper Nav
+.upper 
+{
+    width: 100%;
+    margin: 0;
+    color: white;
+    font-size: 12px;
+
+    ul{
+        display: flex;
+        align-items: stretch; /* Default */
+        justify-content: space-between;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: $orange;
+
+        li{
+            float: left;
+
+        }
+        :first-child{
+            padding-left: 70px;  
+        }
+        :last-child{
+            padding-right: 70px;
+        }
+    }
+ 
+}
+
+//Lower Nav
+.navbar{
+    background-color: $blue;
+    .navbar-end{
+        .navbar-item{
+            height: 50px;
+            input,button{
+                height: 100%;
+            }
+            input{
+                width: 400px;
+                padding: 10px;
+                ::placeholder{
+                    color: #A5A5A5;
+                    padding-left: 10px;
+                }
+            }
+            button{
+                color: white;
+                border-radius: 0;
+                background-color: $blue;
+                border: 0.5px #707070 solid;
+                border-left: 0;
+            }
+        }
+    }
+}
+

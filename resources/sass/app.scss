@@ -5,10 +5,38 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Nav
+@import 'navbar';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+//Account
+@import 'account';
+
+//Sidebar
+@import 'accountssidebar';
+
+//Add Products
+@import 'addproducts';
+
+//Footer
+@import 'footer';
+
+//Common
+html{
+    background-color: $body-bg;
+}
+
+a{
+    color: inherit;
+}
+
+.subtitle{
+    padding-top: 10px;
+    padding-left: 10px;
+
+}
+
+hr{
+    margin-top: -19px;
+    margin-left: 10px;
+    width: 95%;
 }

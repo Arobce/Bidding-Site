@@ -1,0 +1,9 @@
+.menu{
+    background-color: white;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.menu-list a.is-active{
+    background-color: $orange;
+}

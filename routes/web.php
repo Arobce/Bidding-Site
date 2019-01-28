@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/my-account', 'HomeController@index')->name('home');
+
+//My Account Routes
+Route::get('/add-product','ProductController@create');
+Route::get('/change-account-information','NavigationController@changeAccountInformation');
+
+//Products
+Route::post('/add-product','ProductController@store');
