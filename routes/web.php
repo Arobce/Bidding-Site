@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/','NavigationController@homepage');
+
 Auth::routes();
 
 Route::get('/my-account', 'HomeController@index')->name('home');
@@ -25,3 +27,5 @@ Route::get('/change-account-information','NavigationController@changeAccountInfo
 
 //Products
 Route::post('/add-product','ProductController@store');
+Route::get('/product/{id}','ProductController@view');
+Route::post('/product/update-time','ProductController@updateTime');

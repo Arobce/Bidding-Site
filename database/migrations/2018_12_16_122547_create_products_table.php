@@ -17,11 +17,12 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->string('image_url');
+            $table->longText('image_url');
             $table->longText('description');
             $table->string('category');
             $table->string('initial_price');
             $table->string('final_price');
+            $table->string('remaining_time')->default('24:00:00');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
         });

@@ -1,0 +1,26 @@
+.featured-section,.new-section{
+    .product-card{
+        margin: 0 10px;
+        position: relative;
+        
+            .price{
+                color: $blue;
+                font-size: 20px;
+            }
+            .name{
+                font-size: 14px;
+            }
+            .card-timer{
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                span{
+                    background-color: $orange;
+                    color: white;
+                    padding: 2px;
+                    font-size: 12px;
+                }
+            }
+
+    }
+}

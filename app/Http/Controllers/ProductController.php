@@ -33,6 +33,27 @@ class ProductController extends Controller
         $product->save();
 
     
-        return $data['initial_price'];
+        return redirect('/my-account');
+    }
+
+    public function view(Request $request,$id){
+        $product = Product::find($id);
+        return view("products/viewproducts",compact('product'));
+    }
+
+    public function updateTime(Request $data){
+
+        $data = json_decode($data->data);
+        
+        foreach($data as $d){
+
+            $product = Product::find($d->id);
+            
+            $product->remaining_time = $d->time;
+            $product->save();
+        
+        }
+        return $data;
+
     }
 }

@@ -20,6 +20,11 @@
 //Footer
 @import 'footer';
 
+//Home Category Section
+@import 'homecategorysection';
+
+//Home Featured Section
+@import 'homefeaturedsection';
 //Common
 html{
     background-color: $body-bg;
@@ -32,6 +37,7 @@ a{
 .subtitle{
     padding-top: 10px;
     padding-left: 10px;
+    font-weight: bold;
 
 }
 
