@@ -1,0 +1,40 @@
+.product{
+    margin: 30px;
+    background-color: white;
+    padding: 10px;
+    .product-title{
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 6px;    
+    }
+    p{
+        margin-left: 10px;
+    }
+    .product-price{
+        font-size: 25px;
+        color: $orange;
+        margin-bottom: 10px;
+    }
+    .bids-title{
+        padding-top: 10px;   
+        font-weight: bold;
+    }
+    .button{
+        color: white;
+        background-color: $blue;
+        width: 100%;
+        border-radius: 0;
+        margin : 10px 10px 0 0;
+    }
+    .product-timer{
+        margin: 20px 0;
+        
+        span{
+            background-color: $orange;
+            color: white;
+            font-size: 40px;        
+            padding: 15px;
+            margin: 10px 0;
+        }
+    }
+}

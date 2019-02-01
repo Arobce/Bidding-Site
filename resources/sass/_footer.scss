@@ -5,10 +5,13 @@
     padding: 10px 0;
     color: white;
     text-align: center;
-    position:relative;
-    bottom:0;
+    position: relative;
 
     .p{
         margin: auto;
     }
+}
+
+.py-4{
+    min-height: calc(100vh - 14vh);
 }

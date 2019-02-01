@@ -36,8 +36,8 @@
     .navbar-end{
         .navbar-item{
             height: 50px;
-            input,button{
-                height: 100%;
+            input{
+                height: 36px;
             }
             input{
                 width: 400px;
@@ -53,6 +53,8 @@
                 background-color: $blue;
                 border: 0.5px #707070 solid;
                 border-left: 0;
+                margin-left: -5px;
+                
             }
         }
     }

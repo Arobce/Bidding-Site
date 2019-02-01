@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Product;
+use App\User;
+use App\Bid;
 
 class NavigationController extends Controller
 {
@@ -29,6 +32,19 @@ class NavigationController extends Controller
 
     public function changeAccountInformation(){
         return view('auth/changeinfo');
+    }
+
+    public function viewMadeBids(){
+
+        $userId = \Auth::user()->id;
+
+        $bidsMade = DB::table('products')
+        ->join("bids","bids.product_id","=","products.id")
+        ->where('bids.user_id',$userId)
+        ->select("products.id","products.name","bids.created_at","bids.amount")
+        ->get();
+
+        return view('products/viewbids',compact('bidsMade'));
     }
 
 }

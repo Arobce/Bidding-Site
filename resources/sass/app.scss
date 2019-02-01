@@ -8,6 +8,9 @@
 // Nav
 @import 'navbar';
 
+//Notification
+@import 'notification';
+
 //Account
 @import 'account';
 
@@ -16,6 +19,12 @@
 
 //Add Products
 @import 'addproducts';
+
+//Product Page
+@import 'productpage.scss';
+
+//
+@import 'productcategories';
 
 //Footer
 @import 'footer';

@@ -3,14 +3,14 @@
           Products
         </p>
         <ul class="menu-list">
-          <li><a class="added-products">Added Products</a></li>
+          <li><a class="added-products" href="/my-account">Added Products</a></li>
           <li><a class="add-product" href="/add-product">Add a Product</a></li>
         </ul>
         <p class="menu-label">
           Bids
         </p>
         <ul class="menu-list">
-          <li><a class="view-bids">View all made bids</a></li>
+          <li><a class="view-bids" href="/my-account/view-bids">View all made bids</a></li>
         </ul>
         <p class="menu-label">
           Account
@@ -43,6 +43,8 @@ if(path=="/change-account-information"){
     setActiveStatus(addProducts);
 }else if(path=="/my-account"){
     setActiveStatus(addedProducts);
+}else if(path=="/my-account/view-bids"){
+    setActiveStatus(viewBids);
 }
 
 function setActiveStatus(element){

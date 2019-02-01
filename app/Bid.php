@@ -7,17 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 class Bid extends Model
 {
     //
-    const CREATED_AT = 'bid_time';
-    const UPDATED_AT = 'last_update';
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
+    protected $fillable = ['amount'];
     
     //Relationships
-    public function users(){
+    public function user(){
         return $this->belongsTo('App\User');
 
     }
 
-    public function products(){
+    public function product(){
         return $this->belongsTo('App\Product');
     }
 }

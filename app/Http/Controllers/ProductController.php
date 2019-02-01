@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Auth;
 use App\Product;
 use App\User;
+use App\Bid;
 
 class ProductController extends Controller
 {
@@ -37,8 +39,14 @@ class ProductController extends Controller
     }
 
     public function view(Request $request,$id){
+        
         $product = Product::find($id);
-        return view("products/viewproducts",compact('product'));
+
+        $bids = Bid::orderBy('created_at','desc')->get();
+
+
+
+        return view("products/viewproducts",compact('product','bids'));
     }
 
     public function updateTime(Request $data){
@@ -55,5 +63,28 @@ class ProductController extends Controller
         }
         return $data;
 
+    }
+
+    public function viewProductsByCategory(Request $data,$category){
+
+        $products = Product::where('category',$category)->get();
+
+        return view("products/categories",compact('products','category'));
+
+    }
+
+    public function searchProduct(Request $data){
+
+        $category = $data->keyword;
+        $products = Product::where('category',$data->keyword)->get();
+
+        return view("products/categories",compact('products','category'));
+
+    }
+
+    public function allCategories(){
+        $products = Product::select('category')->distinct()->get();
+
+        return view("productcategories",compact('products'));
     }
 }

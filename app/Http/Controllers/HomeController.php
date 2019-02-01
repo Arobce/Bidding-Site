@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $userId = \Auth::user()->id;
+        $addedProducts = Product::where('user_id',$userId)->get();
+        return view('home',compact('addedProducts'));
     }
 }
