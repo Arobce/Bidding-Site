@@ -11,7 +11,7 @@
 <div class="featured-section">
     <h1 class="subtitle">Featured</h1>
     <hr>
-    <div class="columns">
+    <div class="columns is-multiline">
         @foreach($featuredProducts as $product)
         <div class="product-column column is-one-fifth">
             <a class="product-link" href="/product/{{$product->id}}">
@@ -42,7 +42,7 @@
 <div class="new-section">
         <h1 class="subtitle">New Products</h1>
         <hr>
-        <div class="columns">
+        <div class="columns is-multiline">
             @foreach($newProducts as $product)
             <div class="product-column column is-one-fifth">
                 <a class="product-link" href="/product/{{$product->id}}">

@@ -6,7 +6,7 @@
 <div class="featured-section product-categories">
     <h1 class="subtitle">Categories</h1>
     <hr>
-    <div class="columns">
+    <div class="columns is-multiline">
         @foreach($products as $product)
           <div class="column is-half">
                 <a href="{{url('product/category/'.$product->category)}}"> 

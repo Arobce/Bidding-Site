@@ -42,9 +42,7 @@ class ProductController extends Controller
         
         $product = Product::find($id);
 
-        $bids = Bid::orderBy('created_at','desc')->get();
-
-
+        $bids = Bid::where('product_id',$id)->orderBy('created_at','desc')->get();
 
         return view("products/viewproducts",compact('product','bids'));
     }
@@ -52,6 +50,7 @@ class ProductController extends Controller
     public function updateTime(Request $data){
 
         $data = json_decode($data->data);
+
         
         foreach($data as $d){
 

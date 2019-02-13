@@ -1,52 +1,29 @@
 function timer(){
   
-    var timer = document.querySelectorAll('.card-timer');
+    var timerDiv = document.querySelectorAll('.card-timer');
    
-    timer.forEach(function(element) {
-      
+    timerDiv.forEach(function(element) {
+
+        var hours = parseInt(element.querySelector('.hour').innerHTML);
+        var minutes = parseInt(element.querySelector('.minute').innerHTML);
+        var seconds = parseInt(element.querySelector('.second').innerHTML);
+        var duration = hours * 60 * 60 + minutes * 60 + seconds;
+        var timer = duration,hours, minutes, seconds;
         setInterval(function(){
-            var secondElement = element.querySelector('.second');
-            
-            var minuteElement = element.querySelector('.minute');
+            hours = parseInt((timer /3600)%24, 10)
+            minutes = parseInt((timer / 60)%60, 10)
+            seconds = parseInt(timer % 60, 10);
 
-            var hourElement = element.querySelector('.hour');
-        
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
 
-            secondElement.innerHTML--;
-            
-            if(secondElement.innerHTML<10){
-            
-                secondElement.innerHTML = 0+secondElement.innerHTML;
-            
+            element.querySelector('.hour').innerHTML = hours;
+            element.querySelector('.minute').innerHTML = minutes;
+            element.querySelector('.second').innerHTML = seconds;
 
-                if(secondElement.innerHTML=='0-1'){
 
-                    secondElement.innerHTML = 60;
-
-                    secondElement.innerHTML--;
-
-                    minuteElement.innerHTML--;
-
-                    if(minuteElement.innerHTML<10){
-                        
-                        minuteElement.innerHTML = 0+minuteElement.innerHTML;
-
-                        minuteElement.innerHTML--;
-                        
-                        if(minuteElement.innerHTML=='-1'){
-                
-                            minuteElement.innerHTML = 60;
-                            
-                            minuteElement.innerHTML--;
-
-                            hourElement.innerHTML--;
-
-                        }
-                    }
-                }
-            
-
-            }
+            --timer;
         },1000);
         
     });

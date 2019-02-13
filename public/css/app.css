@@ -39,6 +39,12 @@
   background-color: #28A8FF;
 }
 
+.navbar .logo-text {
+  color: white;
+  font-size: 29px;
+  font-family: Tw Cen MT Condensed Extra Bold;
+}
+
 .navbar .navbar-end .navbar-item {
   height: 50px;
 }

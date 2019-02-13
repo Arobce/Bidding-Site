@@ -21,7 +21,7 @@ class NavigationController extends Controller
 
     public function homePage(){
 
-        $featuredProducts = Product::inRandomOrder()->get();
+        $featuredProducts = Product::inRandomOrder()->limit(5)->get();
         
         $newProducts = Product::orderBy('created_at','desc')->get();
 

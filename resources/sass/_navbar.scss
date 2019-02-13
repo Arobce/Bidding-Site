@@ -6,6 +6,7 @@
     color: white;
     font-size: 12px;
 
+ 
     ul{
         display: flex;
         align-items: stretch; /* Default */
@@ -33,6 +34,12 @@
 //Lower Nav
 .navbar{
     background-color: $blue;
+    .logo-text{
+        color: white;
+        font-size: 29px;
+        font-family: Tw Cen MT Condensed Extra Bold;
+        
+    }
     .navbar-end{
         .navbar-item{
             height: 50px;

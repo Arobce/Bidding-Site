@@ -21,23 +21,33 @@
             
 
             <p class="bids-title">Current Bids</p>
-            <table class="table is-fullwidth">
-                <thead>
-                    <tr>
-                        <td>DateTime</td>
-                        <td>Bid</td>
-                    </tr>
-                </thead>
+            @if(count($bids)==0)
+                    <p class="no-bids-message">No current bids for this product.</p>
+
+            @else
                 
-                @foreach($bids as $bid)
-                <tbody>
-                    <tr>
-                        <td>{{$bid->created_at}}</td>
-                        <td>Rs. {{$bid->amount}}</td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+                <table class="table is-fullwidth">
+                
+
+                    <thead>
+                        <tr>
+                            <td>DateTime</td>
+                            <td>Bid</td>
+                        </tr>
+                    </thead>
+
+                
+                    
+                    @foreach($bids as $bid)
+                    <tbody>
+                        <tr>
+                            <td>{{$bid->created_at}}</td>
+                            <td>Rs. {{$bid->amount}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            @endif
             <p class="bids-title">Bid</p>
             @if(Auth::check())
             <form action="{{url('/bid')}}" method="POST">
