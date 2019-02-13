@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="home-category-section columns">
-    <div class="first large column"><img src="{{asset('assets/laptop_banner.jpg')}}"></div>
-    <div class="second-top small column"><img src="{{asset('assets/mobile_banner.jpg')}}"></div>
-    <div class="third-bottom small column"><img src="{{asset('assets/car_banner.jpg')}}"></div>
+    <div class="first large column"><a href="product/category/computers"><img src="{{asset('assets/laptop_banner.jpg')}}"></a></div>
+    <div class="second-top small column"><a href="product/category/phones"><img src="{{asset('assets/mobile_banner.jpg')}}"></a></div>
+    <div class="third-bottom small column"><a href="product/category/vehicle"><img src="{{asset('assets/car_banner.jpg')}}"></a></div>
 </div>
 
 <div class="featured-section">
